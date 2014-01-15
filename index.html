@@ -36,11 +36,6 @@
 
 <p>This jQuery plugin displays your Youtube videos as gallery with (or without) Fancybox integration.</p>
 
-<p>You can download the plugin files or clone the repository, like this:</p>
-
-<pre><code>$ git clone https://moreirapontocom@github.com/moreirapontocom/youtube-gallery.git
-</code></pre>
-
 <h3>
 <a name="copyrights" class="anchor" href="#copyrights"><span class="octicon octicon-link"></span></a>Copyrights</h3>
 
@@ -56,6 +51,68 @@ If you improve the plugin, please let me know!</p>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with the plugin? Send me an e-mail at <a href="http://lucasmoreira.com.br">http://lucasmoreira.com.br</a>.</p>
+
+<h3>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h3>
+
+<p><strong>Step 1:</strong> include the plugin files</p>
+
+<p><code>&lt;link href="youtube-gallery/yt-gallery.css" rel="stylesheet" /&gt;   
+&lt;script src="youtube-gallery/yt-gallery.js"&gt;&lt;/script&gt;</code></p>
+
+<p><strong>Step 2:</strong> initiate the plugin without options</p>
+
+<p><code>&lt;script&gt;   
+    $(function() {   
+        $('#gallery').YouTubeGallery();   
+    });   
+&lt;/script&gt;</code></p>
+
+<p><em>#gallery:</em> videos container</p>
+
+<p><strong>Step 3:</strong> The HTML markup</p>
+
+<p><code>
+&lt;div id="gallery"&gt;
+    &lt;div class="yt-gallery" data-video-id="[VIDEO ID 1]"&gt;&lt;/div&gt;
+    &lt;div class="yt-gallery" data-video-id="[VIDEO ID 2]"&gt;&lt;/div&gt;
+    &lt;div class="yt-gallery" data-video-id="[VIDEO ID ...]"&gt;&lt;/div&gt;
+    &lt;div class="yt-gallery" data-video-id="[VIDEO ID N]"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></p>
+
+<p><strong>OPTIONAL PARAMETERS:</strong></p>
+
+<p><code>
+cover:          [STRING]  thumbnail image (see extras below)
+videoInfo:      [BOOLEAN] display date and video author
+openInFancybox:     [BOOLEAN] display video at new page (Youtube) or play in Fancybox
+autoplay:       [BOOLEAN] autoplay video (only if openFancybox is true)
+texts: {
+    post_date:  [STRING]  default text to date,
+    post_author:    [STRING]  default text to author
+},
+messages: {
+    error:      [STRING]  default text to error
+}
+</code></p>
+
+<p><strong>EXTRAS</strong></p>
+
+<p><strong>HOW YOUTUBE THUMBNAIL WORKS</strong></p>
+
+<p>XML : <a href="https://gdata.youtube.com/feeds/api/videos/%5BVIDEO">https://gdata.youtube.com/feeds/api/videos/[VIDEO</a> ID]?v=2
+EMBED   : &lt;iframe width="340" height="191" src="//<a href="http://www.youtube.com/embed/%5BVIDEO">www.youtube.com/embed/[VIDEO</a> ID]" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</p>
+
+<p><strong>THUMBNAILS</strong> (h x w)</p>
+
+<p>90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/default.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/default.jpg</a>      &gt; default quality
+180 x 320   <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/mqdefault.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/mqdefault.jpg</a>    &gt; medium quality
+360 x 480   <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/hqdefault.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/hqdefault.jpg</a>    &gt; high quality
+480 x 640   <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/sddefault.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/sddefault.jpg</a>    &gt; slow quality
+90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/1.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/1.jpg</a>        &gt; default quality
+90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/2.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/2.jpg</a>        &gt; default quality
+90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/3.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/3.jpg</a>        &gt; default quality`</p>
         </section>
 
         <footer>
