@@ -1,18 +1,92 @@
-<pre>
-<b>How to use:</b>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> EAC Software</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 20px;
+		}
 
+		code {
+			padding: 7px 7px 25px 7px;
+			background-color: #efefef;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+
+<pre>
+<b>HOW TO USE:</b>
+
+<b>Step 1:</b> include the plugin files
+
+<code>
 &lt;link href="youtube-gallery/yt-gallery.css" type="text/css" rel="stylesheet" />
 &lt;script src="youtube-gallery/yt-gallery.js">&lt;/script>
+</code>
 
+<b>Step 2:</b> initiate the plugin without options
+
+<code>
 &lt;script>
 	$(function() {
 		$('#gallery').YouTubeGallery();
 	});
 &lt;/script>
 
+<i>#gallery</i>: videos container
+</code>
+
+<b>Step 3:</b>The HTML markup
+
+<code>
 &lt;div id="gallery">
-	&lt;div class="yt-gallery" data-video-id="itPsIIW-rNs">&lt;/div>
-	&lt;div class="yt-gallery" data-video-id="dcZNLCUGE2c">&lt;/div>
-	&lt;div class="yt-gallery" data-video-id="CrGAujBhvPc">&lt;/div>
+	&lt;div class="yt-gallery" data-video-id="[VIDEO ID 1]">&lt;/div>
+	&lt;div class="yt-gallery" data-video-id="[VIDEO ID 2]">&lt;/div>
+	&lt;div class="yt-gallery" data-video-id="[VIDEO ID ...]">&lt;/div>
+	&lt;div class="yt-gallery" data-video-id="[VIDEO ID N]">&lt;/div>
 &lt;/div>
+</code>
+
+<b>OPTIONAL PARAMETERS:</b>
+
+<code>
+cover:			[STRING]  thumbnail image (see extras below)
+videoInfo:		[BOOLEAN] display date and video author
+openInFancybox: 	[BOOLEAN] display video at new page (Youtube) or play in Fancybox
+autoplay:		[BOOLEAN] autoplay video (only if openFancybox is true)
+texts: {
+	post_date:	[STRING]  default text to date,
+	post_author:	[STRING]  default text to author
+},
+messages: {
+	error:		[STRING]  default text to error
+}
+</code>
+
+<b>EXTRAS</b>
+
+<b>HOW YOUTUBE THUMBNAIL WORKS</b>
+
+XML	: https://gdata.youtube.com/feeds/api/videos/[VIDEO ID]?v=2
+EMBED	: &lt;iframe width="340" height="191" src="//www.youtube.com/embed/[VIDEO ID]" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+<b>THUMBNAILS</b> (h x w)
+
+90 x 120	http://i1.ytimg.com/vi/dcZNLCUGE2c/default.jpg		> default quality
+180 x 320	http://i1.ytimg.com/vi/dcZNLCUGE2c/mqdefault.jpg	> medium quality
+360 x 480	http://i1.ytimg.com/vi/dcZNLCUGE2c/hqdefault.jpg	> high quality
+480 x 640	http://i1.ytimg.com/vi/dcZNLCUGE2c/sddefault.jpg	> slow quality
+90 x 120	http://i1.ytimg.com/vi/dcZNLCUGE2c/1.jpg		> default quality
+90 x 120	http://i1.ytimg.com/vi/dcZNLCUGE2c/2.jpg		> default quality
+90 x 120	http://i1.ytimg.com/vi/dcZNLCUGE2c/3.jpg		> default quality
 </pre>
+
+</body>
+</html>
