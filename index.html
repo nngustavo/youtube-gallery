@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Youtube Gallery by moreirapontocom</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Youtube Gallery : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Youtube Gallery</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
 
-        <header>
-          <h1>Youtube Gallery</h1>
-          <h2></h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/moreirapontocom/youtube-gallery">View on GitHub</a>
+
+          <h1 id="project_title">Youtube Gallery</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/moreirapontocom/youtube-gallery/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/moreirapontocom/youtube-gallery/tarball/master">Download this project as a tar.gz file</a>
+            </section>
         </header>
+    </div>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/moreirapontocom/youtube-gallery/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/moreirapontocom/youtube-gallery/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/moreirapontocom/youtube-gallery" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h3>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
 <a name="about-youtube-gallery" class="anchor" href="#about-youtube-gallery"><span class="octicon octicon-link"></span></a>About Youtube Gallery</h3>
 
 <p>This jQuery plugin displays your Youtube videos as gallery with (or without) Fancybox integration.</p>
@@ -57,71 +57,75 @@ If you improve the plugin, please let me know!</p>
 
 <p><strong>Step 1:</strong> include the plugin files</p>
 
-<p><code>&lt;link href="youtube-gallery/yt-gallery.css" rel="stylesheet" /&gt;   
-&lt;script src="youtube-gallery/yt-gallery.js"&gt;&lt;/script&gt;</code></p>
+<pre><code>&lt;link href="youtube-gallery/yt-gallery.css" rel="stylesheet" /&gt;
+&lt;script src="youtube-gallery/yt-gallery.js"&gt;&lt;/script&gt;
+</code></pre>
 
 <p><strong>Step 2:</strong> initiate the plugin without options</p>
 
-<p><code>&lt;script&gt;   
-    $(function() {   
-        $('#gallery').YouTubeGallery();   
-    });   
-&lt;/script&gt;</code></p>
-
-<p><em>#gallery:</em> videos container</p>
+<pre><code>&lt;script&gt;
+    $(function() {
+        $('#gallery').YouTubeGallery();
+    });
+&lt;/script&gt;
+_#gallery:_ videos container
+</code></pre>
 
 <p><strong>Step 3:</strong> The HTML markup</p>
 
-<p><code>
-&lt;div id="gallery"&gt;
+<pre><code>&lt;div id="gallery"&gt;
     &lt;div class="yt-gallery" data-video-id="[VIDEO ID 1]"&gt;&lt;/div&gt;
     &lt;div class="yt-gallery" data-video-id="[VIDEO ID 2]"&gt;&lt;/div&gt;
     &lt;div class="yt-gallery" data-video-id="[VIDEO ID ...]"&gt;&lt;/div&gt;
     &lt;div class="yt-gallery" data-video-id="[VIDEO ID N]"&gt;&lt;/div&gt;
 &lt;/div&gt;
-</code></p>
+</code></pre>
 
 <p><strong>OPTIONAL PARAMETERS:</strong></p>
 
-<p><code>
-cover:          [STRING]  thumbnail image (see extras below)
-videoInfo:      [BOOLEAN] display date and video author
-openInFancybox:     [BOOLEAN] display video at new page (Youtube) or play in Fancybox
-autoplay:       [BOOLEAN] autoplay video (only if openFancybox is true)
+<pre><code>cover:           [STRING]  thumbnail image (see extras below)
+videoInfo:       [BOOLEAN] display date and video author
+openInFancybox:  [BOOLEAN] display video at new page (Youtube) or play in Fancybox
+autoplay:        [BOOLEAN] autoplay video (only if openFancybox is true)
 texts: {
-    post_date:  [STRING]  default text to date,
-    post_author:    [STRING]  default text to author
+    post_date:   [STRING]  default text to date,
+    post_author: [STRING]  default text to author
 },
 messages: {
-    error:      [STRING]  default text to error
+    error: [STRING]  default text to error
 }
-</code></p>
+</code></pre>
 
 <p><strong>EXTRAS</strong></p>
 
 <p><strong>HOW YOUTUBE THUMBNAIL WORKS</strong></p>
 
-<p>XML : <a href="https://gdata.youtube.com/feeds/api/videos/%5BVIDEO">https://gdata.youtube.com/feeds/api/videos/[VIDEO</a> ID]?v=2
-EMBED   : &lt;iframe width="340" height="191" src="//<a href="http://www.youtube.com/embed/%5BVIDEO">www.youtube.com/embed/[VIDEO</a> ID]" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</p>
+<pre><code>XML   : https://gdata.youtube.com/feeds/api/videos/[VIDEO ID]?v=2
+EMBED : &lt;iframe width="340" height="191" src="//www.youtube.com/embed/[VIDEO ID]" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre>
 
 <p><strong>THUMBNAILS</strong> (h x w)</p>
 
-<p>90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/default.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/default.jpg</a>      &gt; default quality
-180 x 320   <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/mqdefault.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/mqdefault.jpg</a>    &gt; medium quality
-360 x 480   <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/hqdefault.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/hqdefault.jpg</a>    &gt; high quality
-480 x 640   <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/sddefault.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/sddefault.jpg</a>    &gt; slow quality
-90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/1.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/1.jpg</a>        &gt; default quality
-90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/2.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/2.jpg</a>        &gt; default quality
-90 x 120    <a href="http://i1.ytimg.com/vi/dcZNLCUGE2c/3.jpg">http://i1.ytimg.com/vi/dcZNLCUGE2c/3.jpg</a>        &gt; default quality`</p>
-        </section>
-
-        <footer>
-          Youtube Gallery is maintained by <a href="https://github.com/moreirapontocom">moreirapontocom</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
+<pre><code>90 x 120    http://i1.ytimg.com/vi/[VIDEO ID]/default.jpg   (default quality)
+180 x 320   http://i1.ytimg.com/vi/[VIDEO ID]/mqdefault.jpg (medium quality)
+360 x 480   http://i1.ytimg.com/vi/[VIDEO ID]/hqdefault.jpg (high quality)
+480 x 640   http://i1.ytimg.com/vi/[VIDEO ID]/sddefault.jpg (slow quality)
+90 x 120    http://i1.ytimg.com/vi/[VIDEO ID]/1.jpg         (default quality)
+90 x 120    http://i1.ytimg.com/vi/[VIDEO ID]/2.jpg         (default quality)
+90 x 120    http://i1.ytimg.com/vi/[VIDEO ID]/3.jpg         (default quality)
+</code></pre>
+      </section>
     </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Youtube Gallery maintained by <a href="https://github.com/moreirapontocom">moreirapontocom</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
